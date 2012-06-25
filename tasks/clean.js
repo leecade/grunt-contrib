@@ -13,10 +13,10 @@ module.exports = function(grunt) {
 
   grunt.registerMultiTask("clean","Clear files and folders",function() {
     var config = grunt.config.get('clean'),
-        files = this.data;
+        files = this.file.src;
 
     // check if we have a valid config & an invalid target specific config
-    if (_.isArray(config) === true && _.isArray(this.data) === false) {
+    if (_.isArray(config) === true && _.isArray(this.file.src) === false) {
       files = config;
     }
 
